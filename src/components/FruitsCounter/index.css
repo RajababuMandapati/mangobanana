@@ -41,13 +41,14 @@
   width: 250px;
 }
 
-.btn {
+.btst {
   background-color: #007bff;
   color: #ffffff;
+  cursor: pointer;
+  outline: none;
   padding: 10px;
   border-radius: 10px;
   width: 150px;
-  cursor: pointer;
-  outline: none;
+
   margin: 10px;
 }

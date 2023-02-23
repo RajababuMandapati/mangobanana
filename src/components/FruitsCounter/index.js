@@ -1,20 +1,27 @@
 // Write your code here
 
+import {Component} from 'react'
 import './index.css'
 
-import {Component} from 'react'
-
 class FruitsCounter extends Component {
-  state = {mango: 0, banana: 0}
+  state = {count1: 0, count2: 0}
+
+  mangoIncrement = () => {
+    this.setState(prevState => ({count1: prevState.mango + 1}))
+  }
+
+  bananaIncrement = () => {
+    this.setState(prevState => ({count2: prevState.banana + 1}))
+  }
 
   render() {
-    const {mango, banana} = this.state
+    const {count1, count2} = this.state
 
     return (
       <div className="big-container">
         <div className="small-container">
           <h1>
-            Bob at <span>{mango}</span>mangoes <span>{banana}</span>bananas
+            Bob ate <span>{count1}</span> mangoes <span>{count2}</span> bananas
           </h1>
           <div className="medium-container">
             <div className="mango-container">
@@ -23,8 +30,11 @@ class FruitsCounter extends Component {
                 alt="mango"
                 className="mango"
               />
-
-              <button onClick={this.mangoIncrement} className="btn">
+              <button
+                type="button"
+                className="btst"
+                onClick={this.mangoIncrement}
+              >
                 Eat Mango
               </button>
             </div>
@@ -35,8 +45,11 @@ class FruitsCounter extends Component {
                 alt="banana"
                 className="banana"
               />
-
-              <button className="btn" onClick={this.bananIncrement}>
+              <button
+                type="button"
+                className="btst"
+                onClick={this.bananaIncrement}
+              >
                 Eat Banana
               </button>
             </div>
